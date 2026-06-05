@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trusi.fun</title>
+    <!-- Іконка сайту -->
+    <link rel="icon" type="image/png" href="logo.png">
     <style>
         body { font-family: sans-serif; text-align: center; padding: 20px; background-color: #f4f4f9; color: #333; }
         h1 { font-size: 28px; }
@@ -14,36 +16,37 @@
         
         /* Галерея */
         .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; margin-top: 30px; }
-        .gallery-item { cursor: pointer; }
+        .gallery-item { cursor: pointer; text-decoration: none; color: inherit; }
         .gallery-item img { width: 100%; border-radius: 10px; transition: transform 0.2s; }
         .gallery-item:hover { transform: scale(1.05); }
 
         /* Кнопки */
         .actions { margin-top: 40px; display: flex; justify-content: center; gap: 20px; align-items: center; }
-        .btn { padding: 10px 20px; background: #0088cc; color: white; border-radius: 5px; text-decoration: none; }
-        .qr-code { width: 100px; cursor: pointer; }
+        .btn { padding: 10px 20px; background: #0088cc; color: white; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .qr-code { width: 100px; cursor: pointer; border: 2px solid #0088cc; border-radius: 10px; }
     </style>
 </head>
 <body>
 
     <h1>Вітаю на trusi.fun!</h1>
     
-    <!-- Ваше лого -->
+    <!-- Головне лого -->
     <img src="logo.png" alt="Логотип" class="logo-main">
 
     <p>Тут ви знайдете найцікавіше:</p>
 
     <ul class="links-list">
         <li class="link-item"><a href="https://t.me/trusifun">Мій Telegram канал</a></li>
+        <li class="link-item"><a href="mailto:trusifun@gmail.com">Написати мені: trusifun@gmail.com</a></li>
     </ul>
 
-    <!-- Галерея (додавайте скільки завгодно таких блоків) -->
+    <!-- Галерея -->
     <div class="gallery">
+        <!-- Приклад блоку фото -->
         <a href="https://t.me/trusifun" class="gallery-item">
             <img src="photo1.jpg" alt="Підпис 1">
             <p>Підпис 1</p>
         </a>
-        <!-- Скопіюйте блок вище, щоб додати більше фото -->
     </div>
 
     <!-- Кнопки -->
