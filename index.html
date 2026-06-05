@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trusi.fun</title>
-    <!-- Іконка сайту -->
     <link rel="icon" type="image/png" href="logo.png">
     <style>
         body { font-family: sans-serif; text-align: center; padding: 20px; background-color: #f4f4f9; color: #333; }
@@ -29,6 +28,7 @@
 
     <!-- Верхня панель -->
     <div class="header-panel">
+        <!-- Кнопка 1 -->
         <div style="text-align: center;">
             <button onclick="shareSite()" style="border:none; background:none; cursor:pointer; padding:0;">
                 <img src="logo.png" class="icon-btn" alt="Share">
@@ -36,11 +36,12 @@
             <div class="share-label">Поділитися</div>
         </div>
 
+        <!-- Кнопка 2 (тепер теж для шерингу) -->
         <div style="text-align: center;">
-            <a href="https://t.me/trusifun">
-                <img src="qr-code.png" class="icon-btn" alt="QR">
-            </a>
-            <div class="share-label">Telegram</div>
+            <button onclick="shareSite()" style="border:none; background:none; cursor:pointer; padding:0;">
+                <img src="qr-code.png" class="icon-btn" alt="Share">
+            </button>
+            <div class="share-label">Поділитися</div>
         </div>
     </div>
 
