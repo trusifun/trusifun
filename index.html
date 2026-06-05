@@ -9,8 +9,9 @@
     <style>
         body { font-family: sans-serif; text-align: center; padding: 20px; background-color: #f4f4f9; color: #333; }
         
-        .header-panel { display: flex; justify-content: space-between; align-items: center; max-width: 600px; margin: 0 auto 20px auto; }
+        .header-panel { display: flex; justify-content: space-between; align-items: center; max-width: 600px; margin: 0 auto 5px auto; }
         .icon-btn { width: 50px; height: 50px; cursor: pointer; }
+        .share-label { font-size: 12px; color: #666; margin-bottom: 20px; }
 
         h1 { font-size: 24px; margin: 10px 0; }
         .logo-main { max-width: 300px; width: 100%; margin: 20px 0; border-radius: 15px; }
@@ -26,10 +27,18 @@
 </head>
 <body>
 
+    <!-- Верхня панель -->
     <div class="header-panel">
-        <a href="https://t.me/share/url?url=https://trusi.fun"><img src="logo.png" class="icon-btn" alt="Share"></a>
+        <!-- Кнопка системного меню "Поділитися" -->
+        <button onclick="shareSite()" style="border:none; background:none; cursor:pointer; padding:0;">
+            <img src="logo.png" class="icon-btn" alt="Share">
+        </button>
+        <!-- QR-код на Телеграм -->
         <a href="https://t.me/trusifun"><img src="qr-code.png" class="icon-btn" alt="QR"></a>
     </div>
+    
+    <!-- Напис під кнопками -->
+    <div class="share-label">Поділитися</div>
 
     <h1>Вітаю на trusi.fun!</h1>
     
@@ -48,6 +57,22 @@
             <p>Підпис</p>
         </a>
     </div>
+
+    <script>
+        function shareSite() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Trusi.fun',
+                    text: 'Цікавий контент на trusi.fun!',
+                    url: 'https://trusi.fun'
+                }).catch(err => console.error('Помилка поділитися:', err));
+            } else {
+                // Якщо браузер не підтримує меню, просто копіюємо посилання
+                navigator.clipboard.writeText("https://trusi.fun");
+                alert("Посилання скопійовано!");
+            }
+        }
+    </script>
 
 </body>
 </html>
