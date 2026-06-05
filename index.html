@@ -26,20 +26,19 @@
 </head>
 <body>
 
-    <!-- Верхня панель -->
     <div class="header-panel">
-        <!-- Кнопка 1 -->
+        <!-- Кнопка 1: Поділитися сайтом -->
         <div style="text-align: center;">
-            <button onclick="shareSite()" style="border:none; background:none; cursor:pointer; padding:0;">
-                <img src="logo.png" class="icon-btn" alt="Share">
+            <button onclick="shareLink('https://trusi.fun', 'Цікавий контент на trusi.fun!')" style="border:none; background:none; cursor:pointer; padding:0;">
+                <img src="logo.png" class="icon-btn" alt="Share Site">
             </button>
             <div class="share-label">Поділитися</div>
         </div>
 
-        <!-- Кнопка 2 (тепер теж для шерингу) -->
+        <!-- Кнопка 2: Поділитися каналом -->
         <div style="text-align: center;">
-            <button onclick="shareSite()" style="border:none; background:none; cursor:pointer; padding:0;">
-                <img src="qr-code.png" class="icon-btn" alt="Share">
+            <button onclick="shareLink('https://t.me/trusifun', 'Підписуйтесь на мій Telegram канал!')" style="border:none; background:none; cursor:pointer; padding:0;">
+                <img src="qr-code.png" class="icon-btn" alt="Share TG">
             </button>
             <div class="share-label">Поділитися</div>
         </div>
@@ -64,15 +63,15 @@
     </div>
 
     <script>
-        function shareSite() {
+        function shareLink(url, text) {
             if (navigator.share) {
                 navigator.share({
                     title: 'Trusi.fun',
-                    text: 'Цікавий контент на trusi.fun!',
-                    url: 'https://trusi.fun'
+                    text: text,
+                    url: url
                 }).catch(err => console.error(err));
             } else {
-                navigator.clipboard.writeText("https://trusi.fun");
+                navigator.clipboard.writeText(url);
                 alert("Посилання скопійовано!");
             }
         }
